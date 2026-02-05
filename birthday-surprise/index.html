@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday, My Love ❤️</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Poppins:wght@300;400;600&family=Playfair+Display:ital,wght@1,600&display=swap"
+        rel="stylesheet">
+
+    <!-- EmailJS SDK -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function () {
+            // https://dashboard.emailjs.com/admin/account
+            emailjs.init("_fLlIcmpmLbOPgUrY"); // User needs to replace this
+        })();
+    </script>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Floating Background Particles -->
+    <div id="particles-container"></div>
+
+    <!-- Audio Player (Hidden Default) -->
+    <audio id="bg-music" loop>
+        <source src="assets/Jessy's Land.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+
+    <!-- LANDING SECTION -->
+    <section id="landing" class="fullscreen-section">
+        <div class="content-wrapper center-content">
+            <h1 class="main-title reveal-text">For the One Who Holds My Heart...</h1>
+            <p class="subtitle reveal-text delay-1">A little surprise for your special day ✨</p>
+            <button id="start-btn" class="glow-button">Can we start? 💖</button>
+        </div>
+    </section>
+
+    <!-- MAIN CONTENT (Hidden initially) -->
+    <main id="main-content" class="hidden">
+
+        <!-- INTRO QUOTE -->
+        <section class="intro-quote section-padding">
+            <div class="glass-card fade-in-on-scroll">
+                <p class="quote-text">"In every smile of yours, my whole world feels lighter ✨"</p>
+            </div>
+        </section>
+
+        <!-- RELATIONSHIP TIMER -->
+        <section id="timer-section" class="section-padding fade-in-on-scroll">
+            <h2 class="section-title">Loving You For...</h2>
+            <div id="timer" class="timer-container">
+                <div class="time-box">
+                    <span id="years">0</span>
+                    <span class="label">Years</span>
+                </div>
+                <div class="time-box">
+                    <span id="days">0</span>
+                    <span class="label">Days</span>
+                </div>
+                <div class="time-box">
+                    <span id="hours">0</span>
+                    <span class="label">Hours</span>
+                </div>
+                <div class="time-box">
+                    <span id="minutes">0</span>
+                    <span class="label">Mins</span>
+                </div>
+                <div class="time-box">
+                    <span id="seconds">0</span>
+                    <span class="label">Secs</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- MEMORY LANE (Cards) -->
+        <section id="memories" class="section-padding">
+            <h2 class="section-title fade-in-on-scroll">Our Beautiful Memories 🌸</h2>
+            <div class="cards-container">
+                <!-- Card 1 -->
+                <div class="memory-card fade-in-on-scroll delay-1">
+                    <div class="card-image-wrapper">
+                        <!-- Replace with real image path -->
+                        <img src="assets/special_day.jpg" alt="Beautiful Memory" class="card-img"
+                            onerror="this.src='https://placehold.co/600x400/pink/white?text=Our+Photo'">
+                    </div>
+                    <div class="card-content">
+                        <span class="card-icon">👑</span>
+                        <p>The day you stole my heart</p>
+                        MY QUEEN
+
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="memory-card fade-in-on-scroll delay-2">
+                    <div class="card-image-wrapper">
+                        <!-- Replace with real image path -->
+                        <img src="assets/sweet_moment.jpg" alt="Another Memory" class="card-img"
+                            onerror="this.src='https://placehold.co/600x400/pink/white?text=Sweet+Moment'">
+                    </div>
+                    <div class="card-content">
+                        <span class="card-icon">🦋</span>
+                        <p>Every moment with you is magic amulu.</p>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="memory-card fade-in-on-scroll delay-3">
+                    <div class="card-image-wrapper">
+                        <!-- Replace with real image path -->
+                        <img src="assets/adventures.jpg" alt="Happy Times" class="card-img"
+                            onerror="this.src='https://placehold.co/600x400/pink/white?text=Adventures'">
+                    </div>
+                    <div class="card-content">
+                        <span class="card-icon">💗</span>
+                        <p>To many more adventures together with my pattulukutty.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- GALLERY GRID -->
+        <section id="gallery" class="section-padding">
+            <h2 class="section-title fade-in-on-scroll">Moments of Joy ✨</h2>
+            <div class="gallery-grid" id="gallery-grid">
+                <!-- Dynamically populated by script.js -->
+            </div>
+        </section>
+
+
+
+        <!-- FINAL MESSAGE -->
+        <section id="final-message" class="fullscreen-section box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);">
+            <div class="message-container glass-card">
+                <div id="typewriter-text" class="handwritten-font"></div>
+                <h1 class="big-love-text hidden-fade">Happy Birthday,<br>My Love❤️</h1>
+            </div>
+        </section>
+        <!-- INTERACTIVE CAKE -->
+        <section id="cake-section" class="section-padding fade-in-on-scroll">
+            <h2 class="section-title">Make a Wish! 🎂</h2>
+            <p class="instruction">Tap the cake to blow out the candles!</p>
+            <div class="cake-container" id="cake">
+                <div class="plate"></div>
+                <div class="layer layer-bottom"></div>
+                <div class="layer layer-middle"></div>
+                <div class="layer layer-top"></div>
+                <div class="icing"></div>
+                <div class="drip drip1"></div>
+                <div class="drip drip2"></div>
+                <div class="drip drip3"></div>
+
+                <div class="candle">
+                    <div class="flame"></div>
+                </div>
+            </div>
+
+            <!-- Cartoon Popups -->
+            <div id="cartoon-popups">
+                <div class="cartoon-popup left-popup">🎉 Happy Birthday amulu! 🎈</div>
+                <div class="cartoon-popup right-popup">🎂Happy anniversary!!✨</div>
+            </div>
+
+            <!-- Wish Message Form (Hidden initially) -->
+            <div id="wish-container" class="hidden-fade">
+                <h3>Share Your Heart 💖</h3>
+                <textarea id="wish-message"
+                    placeholder="What's on your mind? How do you feel? What do you want to do? Write it all here freely... ✨"></textarea>
+                <button id="send-wish-btn" class="glow-button">Make My Wish 💌</button>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Lightbox -->
+    <div id="lightbox" class="lightbox">
+        <span class="close-lightbox">&times;</span>
+        <img class="lightbox-content" id="lightbox-img">
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
